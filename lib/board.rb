@@ -1,8 +1,6 @@
 class Board
-
   @@win = false
   @@draw = false
-  
   
   def self.display(board)
     puts "  #{board[0]} | #{board[1]} | #{board[2]}  "
