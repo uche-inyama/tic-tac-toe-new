@@ -21,5 +21,10 @@ puts "--------------"
 puts "Start Game"
 
 puts "--------------"
+
+while Board.status == false
+   player_1.move
+   player_2.move
+end
 puts Board.display(board)
 

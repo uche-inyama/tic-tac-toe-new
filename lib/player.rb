@@ -12,7 +12,13 @@ class Player
     "#{@first_name} #{last_name}"
   end
 
-  def move(position)
-    Board.status(position)
+  def move
+    Board.status(get_position)
+  end
+
+  private
+
+  def get_position
+    position = gets.chomp
   end
 end
