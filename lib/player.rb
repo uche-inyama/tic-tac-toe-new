@@ -1,19 +1,22 @@
 require_relative 'board'
 
 class Player
-  attr_reader :first_name, :last_name
+  attr_reader :first_name, :last_name, :symbol
 
-  def initialize(first_name, last_name)
+  def initialize(first_name, last_name, symbol)
     @first_name = first_name
     @last_name = last_name
+    @symbol = symbol
   end
 
   def full_name
     "#{@first_name} #{last_name}"
   end
 
-  def move
-    Board.status(get_position)
+
+  def move(player)
+    position = get_position
+    [player, position]
   end
 
   private

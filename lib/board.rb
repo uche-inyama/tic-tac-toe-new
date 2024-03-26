@@ -10,10 +10,16 @@ class Board
     puts "  #{board[6]} | #{board[7]} | #{board[8]}  "
   end
 
+  def self.update_board(position, board, player)
+    if player.symbol == "X"
+      board[position.to_i - 1] = "X"
+    else
+      board[postion.to_i - 1] = "O"
+    end
+  end
+
+
   def self.status(cordinate)
     # implement a switch statement here
-    case cordinate
-    when
-    end
   end
 end
