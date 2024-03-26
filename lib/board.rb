@@ -12,5 +12,8 @@ class Board
 
   def self.status(cordinate)
     # implement a switch statement here
+    case cordinate
+    when
+    end
   end
 end
