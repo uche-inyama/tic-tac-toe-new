@@ -1,4 +1,5 @@
 class Board
+
   @@win = false
   @@draw = false
   
@@ -18,8 +19,22 @@ class Board
     end
   end
 
-
-  def self.status?(cordinate)
+  def self.status?(board)
     # implement a switch statement here
   end
+
+  def self.valid_move?(board, position)
+    if board[position.to_i-1] == 'X' || board[position.to_i-1] == 'O'
+      return false
+    else
+      return true
+    end
+  end
+
+  private
+
+  def victory
+    
+  end
+  
 end

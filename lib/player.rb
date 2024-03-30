@@ -1,4 +1,4 @@
-require_relative 'board'
+require_relative './board'
 
 class Player
   attr_reader :first_name, :last_name, :symbol
@@ -12,7 +12,6 @@ class Player
   def full_name
     "#{@first_name} #{@last_name}"
   end
-
 
   def move
     position = get_position

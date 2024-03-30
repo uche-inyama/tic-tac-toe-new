@@ -29,20 +29,30 @@ puts "--------------"
 
 puts Board.display(board)
 
-# should be a loop
+
 while count <= 8 
   puts "#{player_1.first_name} make your move"
   player, position = player_1.move
+  until Board.valid_move?(board, position) do
+    puts "The space is taken, #{player_1.first_name} choose another spot"
+    puts Board.display(board)
+    puts "#{player_1.first_name} make your move"
+    player, position = player_1.move
+  end
   Board.update_board(position, board, player)
   puts Board.display(board)
 
   puts "#{player_2.first_name} make your move"
   player, position = player_2.move
+  until Board.valid_move?(board, position) do
+    puts "The space is taken, #{player_2.first_name} choose another spot"
+    puts Board.display(board)
+    puts "#{player_2.first_name} make your move"
+    player, position = player_2.move
+  end
   Board.update_board(position, board, player)
   puts Board.display(board)
   count += 1
 end
-
-  # 
 
 
