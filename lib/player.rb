@@ -10,13 +10,13 @@ class Player
   end
 
   def full_name
-    "#{@first_name} #{last_name}"
+    "#{@first_name} #{@last_name}"
   end
 
 
-  def move(player)
+  def move
     position = get_position
-    [player, position]
+    [self, position]
   end
 
   private

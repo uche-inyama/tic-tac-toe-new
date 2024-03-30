@@ -14,12 +14,12 @@ class Board
     if player.symbol == "X"
       board[position.to_i - 1] = "X"
     else
-      board[postion.to_i - 1] = "O"
+      board[position.to_i - 1] = "O"
     end
   end
 
 
-  def self.status(cordinate)
+  def self.status?(cordinate)
     # implement a switch statement here
   end
 end
