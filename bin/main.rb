@@ -30,29 +30,48 @@ puts "--------------"
 puts Board.display(board)
 
 
-while count <= 8 
+while count <= 4
   puts "#{player_1.first_name} make your move"
   player, position = player_1.move
   until Board.valid_move?(board, position) do
-    puts "The space is taken, #{player_1.first_name} choose another spot"
+    puts "Invalid, #{player.first_name}"
     puts Board.display(board)
-    puts "#{player_1.first_name} make your move"
+    puts "#{player.first_name} make your move"
     player, position = player_1.move
   end
   Board.update_board(position, board, player)
+  if Board.status(board, player, count) == true
+    puts Board.display(board)
+    puts "#{player.full_name} won"
+    break
+  elsif Board.status(board, player, count) == false
+    puts Board.display(board)
+    puts "It was a tie"
+    break
+  end
   puts Board.display(board)
 
   puts "#{player_2.first_name} make your move"
   player, position = player_2.move
   until Board.valid_move?(board, position) do
-    puts "The space is taken, #{player_2.first_name} choose another spot"
+    puts "Invalid move, #{player_2.first_name}"
     puts Board.display(board)
     puts "#{player_2.first_name} make your move"
     player, position = player_2.move
   end
   Board.update_board(position, board, player)
+  if Board.status(board, player, count) == true
+    puts Board.display(board)
+    puts "#{player.full_name} won"
+    break
+  elsif Board.status(board, player, count) == false
+    puts Board.display(board)
+    puts "It was a tie"
+    break
+  end
   puts Board.display(board)
   count += 1
 end
+
 
 

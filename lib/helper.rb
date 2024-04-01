@@ -3,7 +3,6 @@ require_relative './board'
 module Validate
   @position = 0
 
-
   def get_position 
     @position
   end
@@ -22,4 +21,5 @@ module Validate
     end
     true
   end
+
 end
