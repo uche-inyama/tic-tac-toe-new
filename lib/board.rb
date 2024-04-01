@@ -1,7 +1,8 @@
 require_relative './helper'
 
 class Board
-  
+  extend Validate
+
   def self.display(board)
     puts "  #{board[0]} | #{board[1]} | #{board[2]}  "
     puts "-------------"
@@ -24,14 +25,6 @@ class Board
       return true
     elsif self.tie?(board, count)
       return false
-    end
-  end
-
-  def self.end_game(board, player, count)
-    while count < 8
-      if self.status(board, player, count) == true
-        
-      end
     end
   end
 

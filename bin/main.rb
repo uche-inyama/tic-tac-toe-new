@@ -27,49 +27,13 @@ puts "Start Game"
 
 puts "--------------"
 
-puts Board.display(board)
-
-
 while count <= 4
-  puts "#{player_1.first_name} make your move"
-  player, position = player_1.move
-  until Board.valid_move?(board, position) do
-    puts "Invalid, #{player.first_name}"
-    puts Board.display(board)
-    puts "#{player.first_name} make your move"
-    player, position = player_1.move
-  end
-  Board.update_board(position, board, player)
-  if Board.status(board, player, count) == true
-    puts Board.display(board)
-    puts "#{player.full_name} won"
-    break
-  elsif Board.status(board, player, count) == false
-    puts Board.display(board)
-    puts "It was a tie"
-    break
-  end
-  puts Board.display(board)
-
-  puts "#{player_2.first_name} make your move"
-  player, position = player_2.move
-  until Board.valid_move?(board, position) do
-    puts "Invalid move, #{player_2.first_name}"
-    puts Board.display(board)
-    puts "#{player_2.first_name} make your move"
-    player, position = player_2.move
-  end
-  Board.update_board(position, board, player)
-  if Board.status(board, player, count) == true
-    puts Board.display(board)
-    puts "#{player.full_name} won"
-    break
-  elsif Board.status(board, player, count) == false
-    puts Board.display(board)
-    puts "It was a tie"
-    break
-  end
-  puts Board.display(board)
+  result_1 = Board.validate(player_1, board, count)
+  break if result_1 == true
+  break if result_1 == false
+  result_2 = Board.validate(player_2, board, count)
+  break if result_2 == true 
+  break if result_2 == false
   count += 1
 end
 
