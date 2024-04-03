@@ -1,7 +1,7 @@
 
 ## Tic Tac Toe
 
-Tic Tac Toe is a board game, played by two players, here is a [link]() for details
+Tic Tac Toe is a board game, played by two players, here is a [link](https://en.wikipedia.org/wiki/Tic-tac-toe) for details
 
 ### In this project I have a practiced object oriented programming in ruby.
 
