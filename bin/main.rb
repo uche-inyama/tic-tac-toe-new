@@ -27,6 +27,10 @@ puts "Start Game"
 
 puts "--------------"
 
+
+## If result is true, it means a player has won.
+## If result is false, it means there is tie.
+
 while count <= 4
   result_1 = Board.validate(player_1, board, count)
   break if result_1 == true
